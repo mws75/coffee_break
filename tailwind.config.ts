@@ -5,8 +5,19 @@ export default {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+      colors: {
+        blueish: {
+          DEFAULT: "#39918C",
+        },
+        lightbrown: {
+          DEFAULT: "#D0B49F",
+        },
+        redbrown: {
+          DEFAULT: "#AB6B51",
+        },
+        darkblue: {
+          DEFAULT: "#2F435A",
+        },
       },
     },
   },

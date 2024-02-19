@@ -1,8 +1,24 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { api } from "../utils/api";
 
 const AddUser = () => {
   const [userName, setUserName] = useState("");
+
+  const { mutate, isLoading: isSaving } = api.users.create.useMutation({
+    onSuccess: () => {
+      setUserName("");
+      alert("User added!");
+    },
+    onError: (error) => {
+      const errorMessage = error.data?.zodError?.fieldErrors.content;
+      if (errorMessage && errorMessage[0]) {
+        alert(errorMessage[0]);
+      } else {
+        alert("Failed to Post!");
+      }
+    },
+  });
 
   return (
     <>
@@ -19,6 +35,11 @@ const AddUser = () => {
           <button
             className="rounded-r-md bg-[#2F435A] px-4 py-2 text-white transition-colors hover:bg-[#6495ED]"
             type="button"
+            onClick={() =>
+              mutate({
+                name: userName,
+              })
+            }
           >
             Submit
           </button>
