@@ -26,3 +26,10 @@ You can check out the [create-t3-app GitHub repository](https://github.com/t3-os
 ## How do I deploy this?
 
 Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+
+## Color Palette
+
+Blueish - #39918C
+Light Brown - #D0B49F
+RedBrown - #AB6B51
+Dark Blue - #2F435A
