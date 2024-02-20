@@ -1,13 +1,14 @@
 import Head from "next/head";
 import Link from "next/link";
 import AddUser from "~/components/addUser";
+import UserBubble from "~/components/userBubble";
 import { BiSolidCoffee } from "react-icons/bi";
 
 import { api } from "~/utils/api";
 import { PageLayout } from "~/components/layouts";
 
 export default function Home() {
-  const hello = api.post.hello.useQuery({ text: "from tRPC" });
+  const hello = api.users.hello.useQuery({ text: "from tRPC" });
 
   return (
     <>
@@ -23,6 +24,9 @@ export default function Home() {
         <PageLayout>
           <div p-50>
             <AddUser></AddUser>
+            <div className="flex flex-col items-center justify-center">
+              <UserBubble></UserBubble>
+            </div>
           </div>
         </PageLayout>
 

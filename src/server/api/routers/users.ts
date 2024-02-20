@@ -11,6 +11,12 @@ export const usersRouter = createTRPCRouter({
       };
     }),
 
+  getAll: publicProcedure.query(({ ctx }) => {
+    return ctx.db.users.findMany({
+      take: 10,
+    });
+  }),
+
   create: publicProcedure
     .input(z.object({ name: z.string().min(1) }))
     .mutation(async ({ ctx, input }) => {

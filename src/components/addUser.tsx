@@ -13,9 +13,9 @@ const AddUser = () => {
     onError: (error) => {
       const errorMessage = error.data?.zodError?.fieldErrors.content;
       if (errorMessage && errorMessage[0]) {
-        alert(errorMessage[0]);
+        alert("Failed to post, here the reason: \n" + errorMessage[0]);
       } else {
-        alert("Failed to Post!");
+        alert("Failed to Post, username must be unquie.");
       }
     },
   });
